@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material';
@@ -9,19 +11,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from  '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatChipsModule} from '@angular/material/chips';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/Router';
 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 
-
 const routes = [
-  { path: 'register', component: RegistrationComponent}
+  { path: 'register', component: RegistrationComponent},
+  { path: '**', component: RegistrationComponent }
 ];
 
 @NgModule({
@@ -33,6 +33,11 @@ const routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule,
+    RouterModule.forRoot(routes),
     MatButtonModule,
     MatCheckboxModule,
     MatMenuModule,
@@ -41,12 +46,7 @@ const routes = [
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatChipsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule,
-    RouterModule,
-    RouterModule.forRoot(routes)
+    MatChipsModule
   ],
   providers: [
     AuthService

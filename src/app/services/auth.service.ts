@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { RegisterUser } from '../models/RegisterUser';
+import { HttpClient } from '@angular/common/http';
 
-const Api_Url = "https://kcpelevennote.azurewebsites.net";
+const Api_Url = 'http://localhost:57751';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private _http: HttpClient) { }
 
   register(regUserData: RegisterUser) {
-
+    return this._http.post(`${Api_Url}/api/Account/Register`, regUserData);
   }
 }
