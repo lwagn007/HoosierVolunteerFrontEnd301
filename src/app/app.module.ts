@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/Router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { AuthService } from './services/auth.service';
 
 
 const routes = [
