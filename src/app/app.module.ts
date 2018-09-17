@@ -11,10 +11,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatChipsModule} from '@angular/material/chips';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/Router';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+
+
+const routes = [
+  { path: 'register', component: RegistrationComponent}
+];
 
 @NgModule({
   declarations: [
@@ -36,7 +43,12 @@ import { RegistrationComponent } from './components/registration/registration.co
     MatChipsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    RouterModule.forRoot(routes)
+  ],
+  providers: [
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
