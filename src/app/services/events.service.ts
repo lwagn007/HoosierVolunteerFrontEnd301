@@ -12,6 +12,10 @@ export class EventsService {
     return this._http.get(`${Api_Url}/Event`, {headers: this.getHeaders() });
   }
 
+  createEvent(event: Event){
+    return this._http.post(`${Api_Url}/Event`, event, {headers: this.getHeaders()});
+  }
+
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }

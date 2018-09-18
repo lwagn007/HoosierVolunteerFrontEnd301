@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from  '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatChipsModule} from '@angular/material/chips';
+import {
+  MatButtonModule, 
+  MatCheckboxModule,
+  MatMenuModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatInputModule,
+  MatChipsModule,
+  MatTableModule
+} from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -27,7 +31,7 @@ const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'events', component: EventsIndexComponent },
+  { path: 'event', component: EventsIndexComponent },
   { path: '**', component: HomeComponent }
 ];
 
@@ -56,7 +60,8 @@ const routes = [
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTableModule
   ],
   providers: [
     AuthService,
