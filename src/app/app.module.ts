@@ -18,15 +18,16 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { VolunteeropportunitiesComponent } from './components/volunteeropportunities/volunteeropportunities.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
+import { EventsService } from './services/events.service';
+import { EventsIndexComponent } from './components/events-index/events-index.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'volunteeropportunities', component: VolunteeropportunitiesComponent }
+  { path: 'events', component: EventsIndexComponent },
   { path: '**', component: HomeComponent }
 ];
 
@@ -37,7 +38,7 @@ const routes = [
     RegistrationComponent,
     LoginComponent,
     HomeComponent,
-    VolunteeropportunitiesComponent
+    EventsIndexComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,8 @@ const routes = [
     MatChipsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    EventsService
   ],
   bootstrap: [AppComponent]
 })
