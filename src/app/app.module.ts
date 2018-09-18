@@ -26,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { EventsService } from './services/events.service';
 import { EventsIndexComponent } from './components/events-index/events-index.component';
+import { EventCreateComponent } from './components/event-create/event-create.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -43,6 +44,7 @@ const routes = [
     LoginComponent,
     HomeComponent,
     EventsIndexComponent,
+    EventCreateComponent,
   ],
   imports: [
     BrowserModule,
