@@ -16,19 +16,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
+import { HomeComponent } from './components/home/home.component';
+import { VolunteeropportunitiesComponent } from './components/volunteeropportunities/volunteeropportunities.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
-  { path: '**', component: RegistrationComponent }
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    HomeComponent,
+    VolunteeropportunitiesComponent
   ],
   imports: [
     BrowserModule,
