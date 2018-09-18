@@ -9,7 +9,7 @@ export class EventsService {
   constructor(private _http: HttpClient) { }
 
   getNotes() {
-    return this._http.get(`${Api_Url}/Event`, {headers: this.getHeaders() });
+    return this._http.get(`${Api_Url}/Event/GetAll`, {headers: this.getHeaders() });
   }
 
   createEvent(event: Event){
