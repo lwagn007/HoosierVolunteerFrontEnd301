@@ -18,14 +18,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { VolunteeropportunitiesComponent } from './components/volunteeropportunities/volunteeropportunities.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
-import { VolunteeropportunitiesComponent } from './components/volunteeropportunities/volunteeropportunities.component';
 
 const routes = [
-  { path: 'register', component: RegistrationComponent},
+  { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent}
+  { path: 'home', component: HomeComponent },
+  { path: 'volunteeropportunities', component: VolunteeropportunitiesComponent }
 ];
 
 @NgModule({
