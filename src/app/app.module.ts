@@ -27,6 +27,7 @@ const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'volunteeropportunities', component: VolunteeropportunitiesComponent }
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
