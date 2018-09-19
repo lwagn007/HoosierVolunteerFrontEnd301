@@ -5,4 +5,5 @@ export interface Event {
     EventRange: Date;
     VolunteersNeeded: number;
     Address: string;
+    EventDescription: string;
 }

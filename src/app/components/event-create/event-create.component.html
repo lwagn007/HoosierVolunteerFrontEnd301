@@ -1,3 +1,34 @@
-<p>
-  event-create works!
-</p>
+<h1>Create Event</h1>
+<hr>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="noteForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="EventTitle" formControlName="EventTitle" type="EventTitle">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Type" formControlName="Type" type="Type">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="EventRange" formControlName="EventRange" type="EventRange">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="VolunteersNeeded" formControlName="VolunteersNeeded" type="VolunteersNeeded">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="Address" type="Address">
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create</button>
+</form>
+
+<a mat-button routerLink="/event">Back to List</a>
