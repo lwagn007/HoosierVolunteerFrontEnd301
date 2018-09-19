@@ -22,9 +22,14 @@
       <mat-cell *matCellDef="let event"> {{event.Type}} </mat-cell>
     </ng-container>
     
-    <ng-container matColumnDef="eventRange">
-      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
-      <mat-cell *matCellDef="let event"> {{event.EventRange}} </mat-cell>
+    <ng-container matColumnDef="eventRange_Start">
+      <mat-header-cell *matHeaderCellDef> Event Start </mat-header-cell>
+      <mat-cell *matCellDef="let event"> {{event.eventRange_Start}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="eventRange_End">
+      <mat-header-cell *matHeaderCellDef> Event End </mat-header-cell>
+      <mat-cell *matCellDef="let event"> {{event.eventRange_End}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="volunteersNeeded">

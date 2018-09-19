@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const Api_Url = 'http://localhost:57751';
+const Api_Url = 'http://localhost:57751/api';
 
 @Injectable()
 export class EventsService {
@@ -13,7 +13,7 @@ export class EventsService {
   }
 
   createEvent(event: Event){
-    return this._http.post(`${Api_Url}/Event`, event, {headers: this.getHeaders()});
+    return this._http.post(`${Api_Url}/Event/Create`, event, {headers: this.getHeaders()});
   }
 
   getEvent(id: string) {

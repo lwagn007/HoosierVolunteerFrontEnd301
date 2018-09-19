@@ -33,12 +33,12 @@ const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: '**', component: HomeComponent },
   { path: 'event', children:[ 
     { path: '', component: EventsIndexComponent},
     { path: 'create', component: EventCreateComponent },
     { path: 'detail/:id', component: EventDetailComponent }
   ]},
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({

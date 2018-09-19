@@ -1,6 +1,6 @@
 <h1>Create Event</h1>
 <hr>
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="noteForm">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="eventForm">
   <div>
     <div>
       <mat-form-field>
@@ -14,7 +14,12 @@
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="EventRange" formControlName="EventRange" type="EventRange">
+        <input matInput placeholder="EventRange_Start" formControlName="EventRange_Start" type="EventRange_Start">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="EventRange_End" formControlName="EventRange_End" type="EventRange_End">
       </mat-form-field>
     </div>
     <div>
@@ -25,6 +30,21 @@
     <div>
       <mat-form-field>
         <input matInput placeholder="Address" formControlName="Address" type="Address">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Zip" formControlName="Zip" type="Zip">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="City" formControlName="City" type="City">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="State" formControlName="State" type="State">
       </mat-form-field>
     </div>
   </div>
