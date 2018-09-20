@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from  '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatChipsModule} from '@angular/material/chips';
+import {
+  MatButtonModule, 
+  MatCheckboxModule,
+  MatMenuModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatInputModule,
+  MatChipsModule,
+  MatTableModule,
+} from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -22,13 +26,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { EventsService } from './services/events.service';
 import { EventsIndexComponent } from './components/events-index/events-index.component';
+import { EventCreateComponent } from './components/event-create/event-create.component';
+import { EventDetailComponent } from './components/event-detail/event-detail.component';
+import { OwlDateTimeModule } from 'ng-pick-datetime';
+import { OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { EventUpdateComponent } from './components/event-update/event-update.component';
+import { EventDeleteComponent } from './components/event-delete/event-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'events', component: EventsIndexComponent },
-  { path: '**', component: HomeComponent }
+  { path: 'event', children:[ 
+    { path: '', component: EventsIndexComponent},
+    { path: 'create', component: EventCreateComponent },
+    { path: 'detail/:id', component: EventDetailComponent }
+  ]},
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({
@@ -39,6 +53,10 @@ const routes = [
     LoginComponent,
     HomeComponent,
     EventsIndexComponent,
+    EventCreateComponent,
+    EventDetailComponent,
+    EventUpdateComponent,
+    EventDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +74,10 @@ const routes = [
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTableModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
   ],
   providers: [
     AuthService,

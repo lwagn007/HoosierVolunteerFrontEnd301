@@ -1,0 +1,75 @@
+<h1>Create Event</h1>
+<hr>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="eventForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="EventTitle" formControlName="EventTitle" type="EventTitle">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Type" formControlName="Type" type="Type">
+      </mat-form-field>
+    </div>
+    <div class="example-wrapper" style="width: 180px; display: inline-block">
+      <label class="example-input-wrapper">
+        Date Start:
+        <input placeholder="Date Start:" formControlName="Start" [selectMode]="'rangeFrom'" [owlDateTimeTrigger]="StartDate"
+          [owlDateTime]="StartDate">
+        <owl-date-time #StartDate></owl-date-time>
+      </label>
+      <br />
+      <label class="example-input-wrapper">
+        Date End:
+        <input placeholder="Date End:" formControlName="End" [selectMode]="'rangeTo'" [owlDateTimeTrigger]="EndDate"
+          [owlDateTime]="EndDate">
+        <owl-date-time #EndDate></owl-date-time>
+        <h4>{{dateTimeRange}}</h4>
+      </label>
+
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="VolunteersNeeded" formControlName="VolunteersNeeded" type="VolunteersNeeded">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="Address" type="Address">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Zip" formControlName="Zip" type="Zip">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="City" formControlName="City" type="City">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="State" formControlName="State" type="State">
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create</button>
+</form>
+
+<a mat-button routerLink="/event">Back to List</a>
+<!-- <div>
+    <mat-form-field style="width:180px">
+      <input matInput [matDatepicker]="Start" format="yyyy-MM-dd" placeholder="Start" formControlName="Start" type="Start">
+      <mat-datepicker-toggle matSuffix [for] ="Start"></mat-datepicker-toggle>
+      <mat-datepicker #Start></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field style="width:180px">
+      <input matInput [matDatepicker]="End" format="yyyy-MM-dd" placeholder="End" formControlName="End" type="End">
+      <mat-datepicker-toggle matSuffix [for] ="End"></mat-datepicker-toggle>
+      <mat-datepicker #End></mat-datepicker>
+    </mat-form-field>
+  </div> -->
