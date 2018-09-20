@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../../services/events.service';
-import { Event } from '../../models/Event';
+import { Events } from '../../models/Events';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
@@ -11,13 +11,13 @@ import { MatTableDataSource } from '@angular/material';
 export class EventsIndexComponent implements OnInit {
 
   columnNames = ['eventId', 'eventTitle', 'type', 'eventRange_Start', 'eventRange_End', 'volunteersNeeded', 'address', 'buttons'];
-  dataSource: MatTableDataSource<Event>
+  dataSource: MatTableDataSource<Events>
 
   constructor(private _eventsService: EventsService) { }
 
   ngOnInit() {
-    this._eventsService.getNotes().subscribe((events: Event[]) => {
-      this.dataSource = new MatTableDataSource<Event>(events);
+    this._eventsService.getNotes().subscribe((events: Events[]) => {
+      this.dataSource = new MatTableDataSource<Events>(events);
     });
   }
 }

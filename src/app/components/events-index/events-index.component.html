@@ -24,12 +24,12 @@
     
     <ng-container matColumnDef="eventRange_Start">
       <mat-header-cell *matHeaderCellDef> Event Start </mat-header-cell>
-      <mat-cell *matCellDef="let event"> {{event.Start}} </mat-cell>
+      <mat-cell *matCellDef="let event"> {{event.Start | date: 'MM/dd/yyyy h:mm a' }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="eventRange_End">
       <mat-header-cell *matHeaderCellDef> Event End </mat-header-cell>
-      <mat-cell *matCellDef="let event"> {{event.End}} </mat-cell>
+      <mat-cell *matCellDef="let event"> {{event.End | date: 'MM/dd/yyyy h:mm a' }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="volunteersNeeded">

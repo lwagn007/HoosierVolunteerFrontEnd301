@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../../services/events.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+// import { Event } from '../../models/Event';
 
 @Component({
   selector: 'app-event-create',
@@ -25,8 +26,6 @@ export class EventCreateComponent implements OnInit {
       Type: new FormControl,
       Start: new FormControl,
       End: new FormControl,
-      //EventRange_Start: new FormControl,
-      //EventRange_End: new FormControl,
       VolunteersNeeded: new FormControl,
       Address: new FormControl,
       Zip: new FormControl,
@@ -35,7 +34,14 @@ export class EventCreateComponent implements OnInit {
     });
   }
 
+//need alex or kenn help with creating pseudoform to accept user input
+
   onSubmit() {
+    this.eventForm.value.End = this.eventForm.value.End[1]
+
+    this.eventForm.value.Start = this.eventForm.value.Start[0]
+      
+    console.log(this.eventForm.value);
     this._eventsService.createEvent(this.eventForm.value).subscribe(data => {
       this._router.navigate(['/event']);
     });

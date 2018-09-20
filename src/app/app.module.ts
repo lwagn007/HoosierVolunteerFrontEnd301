@@ -14,8 +14,6 @@ import {
   MatInputModule,
   MatChipsModule,
   MatTableModule,
-  MatDatepickerModule,
-  MatNativeDateModule
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,6 +28,10 @@ import { EventsService } from './services/events.service';
 import { EventsIndexComponent } from './components/events-index/events-index.component';
 import { EventCreateComponent } from './components/event-create/event-create.component';
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
+import { OwlDateTimeModule } from 'ng-pick-datetime';
+import { OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { EventUpdateComponent } from './components/event-update/event-update.component';
+import { EventDeleteComponent } from './components/event-delete/event-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -53,6 +55,8 @@ const routes = [
     EventsIndexComponent,
     EventCreateComponent,
     EventDetailComponent,
+    EventUpdateComponent,
+    EventDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,8 +76,8 @@ const routes = [
     MatInputModule,
     MatChipsModule,
     MatTableModule,
-    MatDatepickerModule,
-    MatNativeDateModule
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
   ],
   providers: [
     AuthService,
