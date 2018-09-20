@@ -23,8 +23,10 @@ export class EventCreateComponent implements OnInit {
     this.eventForm = this._form.group({
       EventTitle: new FormControl,
       Type: new FormControl,
-      EventRange_Start: new FormControl,
-      EventRange_End: new FormControl,
+      Start: new FormControl,
+      End: new FormControl,
+      //EventRange_Start: new FormControl,
+      //EventRange_End: new FormControl,
       VolunteersNeeded: new FormControl,
       Address: new FormControl,
       Zip: new FormControl,

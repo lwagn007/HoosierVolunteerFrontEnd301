@@ -13,13 +13,17 @@
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field>
-        <input matInput placeholder="EventRange_Start" formControlName="EventRange_Start" type="EventRange_Start">
+      <mat-form-field style="width:180px">
+        <input matInput [matDatepicker]="Start" placeholder="Start" formControlName="Start" type="Start">
+        <mat-datepicker-toggle matSuffix [for] ="Start"></mat-datepicker-toggle>
+        <mat-datepicker #Start></mat-datepicker>
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field>
-        <input matInput placeholder="EventRange_End" formControlName="EventRange_End" type="EventRange_End">
+      <mat-form-field style="width:180px">
+        <input matInput [matDatepicker]="End" placeholder="End" formControlName="End" type="End">
+        <mat-datepicker-toggle matSuffix [for] ="End"></mat-datepicker-toggle>
+        <mat-datepicker #End></mat-datepicker>
       </mat-form-field>
     </div>
     <div>
