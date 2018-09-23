@@ -1,3 +1,65 @@
-<p>
-  event-update works!
-</p>
+<h1>Update Event</h1>
+<hr>
+
+<div *ngIf="event">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="updateEventForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="EventId" formControlName="EventId" type="EventId" required [value]="event.EventId" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="EventTitle" formControlName="EventTitle" type="EventTitle" [value]="event.EventTitle" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Type" formControlName="Type" type="Type" [value]="event.Type" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Start" formControlName="Start" type="Start" [value]="event.Start" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="End" formControlName="End" type="End" [value]="event.End" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="EventDescription" formControlName="EventDescription" type="EventDescription" [value]="event.EventDescription" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="VolunteersNeeded" formControlName="VolunteersNeeded" type="VolunteersNeeded" [value]="event.VolunteersNeeded" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="Address" type="Address" [value]="event.Address" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Zip" formControlName="Zip" type="Zip" [value]="event.Zip" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="City" formControlName="City" type="City" [value]="event.City" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="State" formControlName="State" type="State" [value]="event.State" />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<a mat-button routerLink="/event">Back To List</a>

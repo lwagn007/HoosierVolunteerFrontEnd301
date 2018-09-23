@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../../services/events.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { Event } from '../../models/Event';
+import { Events } from '../../models/Events';
 
 @Component({
   selector: 'app-event-create',
@@ -26,6 +26,7 @@ export class EventCreateComponent implements OnInit {
       Type: new FormControl,
       Start: new FormControl,
       End: new FormControl,
+      EventDescription: new FormControl,
       VolunteersNeeded: new FormControl,
       Address: new FormControl,
       Zip: new FormControl,
@@ -33,8 +34,6 @@ export class EventCreateComponent implements OnInit {
       State: new FormControl,
     });
   }
-
-//need alex or kenn help with creating pseudoform to accept user input
 
   onSubmit() {
     this.eventForm.value.End = this.eventForm.value.End[1]

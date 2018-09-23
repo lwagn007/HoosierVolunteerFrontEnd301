@@ -40,7 +40,9 @@ const routes = [
   { path: 'event', children:[ 
     { path: '', component: EventsIndexComponent},
     { path: 'create', component: EventCreateComponent },
-    { path: 'detail/:id', component: EventDetailComponent }
+    { path: 'detail/:id', component: EventDetailComponent },
+    { path: 'update/:id', component: EventUpdateComponent },
+    { path: 'delete/:id', component: EventDeleteComponent}
   ]},
   { path: '**', component: HomeComponent },
 ];
