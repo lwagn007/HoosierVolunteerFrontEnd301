@@ -9,25 +9,44 @@
   <div>
     <label for="">EventTitle:</label>
     <span>{{event.EventTitle}}</span>
-  </div>  
-  <div>
-    <label for="">EventId:</label>
-    <span>{{event.EventId}}</span>
-  </div>  
-  <div>
-    <label for="">EventId:</label>
-    <span>{{event.EventId}}</span>
-  </div>  
-  <div>
-    <label for="">EventId:</label>
-    <span>{{event.EventId}}</span>
   </div>
   <div>
-    <label for="">EventId:</label>
-    <span>{{event.EventId}}</span>
+    <label for="">Type:</label>
+    <span>{{event.Type}}</span>
   </div>
   <div>
-    <label for="">EventId:</label>
-    <span>{{event.EventId}}</span>
+    <label for="">Description:</label>
+    <span>{{event.EventDescription}}</span>
+  </div>
+  <div>
+    <label for="">Start:</label>
+    <span>{{event.Start | date: 'MM/dd/yyyy h:mm a' }}</span>
+  </div>
+  <div>
+    <label for="">End:</label>
+    <span>{{event.End | date: 'MM/dd/yyyy h:mm a' }}</span>
+  </div>
+  <div>
+    <label for="">Volunteers Needed:</label>
+    <span>{{event.VolunteersNeeded}}</span>
+  </div>
+  <div>
+    <label for="">Address:</label>
+    <span>{{event.Address}}</span>
+  </div>
+  <div>
+    <label for="">Zip:</label>
+    <span>{{event.Zip}}</span>
+  </div>
+  <div>
+    <label for="">City:</label>
+    <span>{{event.City}}</span>
+  </div>
+  <div>
+    <label for="">State:</label>
+    <span>{{event.State}}</span>
   </div>
 </div>
+
+<button mat-button color="accent" routerLink="/event/update/{id}">Edit</button>
+<button mat-button color="primary" routerLink="/event">Back to List</button>

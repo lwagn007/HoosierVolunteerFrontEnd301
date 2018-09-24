@@ -1,5 +1,5 @@
 <h1>Volunteer Opportunities</h1>
-<a mat-raised-button color="primary" routerLink="/event/Create">Create New</a>
+<a mat-raised-button color="primary" routerLink="/event/create">Create New</a>
 <hr>
 
 <div>
@@ -32,6 +32,11 @@
       <mat-cell *matCellDef="let event"> {{event.End | date: 'MM/dd/yyyy h:mm a' }} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="eventDescription" hidden>
+        <mat-header-cell *matHeaderCellDef hidden> Event Description </mat-header-cell>
+        <mat-cell *matCellDef="let event" hidden> {{event.EventDescription}} </mat-cell>
+      </ng-container>
+
     <ng-container matColumnDef="volunteersNeeded">
       <mat-header-cell *matHeaderCellDef> Volunteers Needed </mat-header-cell>
       <mat-cell *matCellDef="let event"> {{event.VolunteersNeeded}} </mat-cell>
@@ -45,17 +50,12 @@
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let event">
-        <i mat-icon class="material-icons">edit</i>
-        <i class="material-icons">delete</i>
+        <i class="material-icons" routerLink="/event/detail/{{event.EventId}}">library_books</i>
+        <i mat-icon class="material-icons" routerLink="/event/update/{{event.EventId}}">update</i>
+        <i class="material-icons" routerLink="/event/delete/{{event.EventId}}">delete</i>
       </mat-cell>
     </ng-container>
-
-    <ng-container matColumnDef="details">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let event" routerLink="/event/detail/{{event.EventId}}">
-        <i class="material-icons">Details</i>
-      </mat-cell>
-    </ng-container>
-
   </mat-table>
 </div>
+
+<!-- {{event.Start | date: 'MM/dd/yyyy h:mm a' }} -->

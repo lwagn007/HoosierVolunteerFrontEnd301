@@ -27,8 +27,12 @@
         <owl-date-time #EndDate></owl-date-time>
         <h4>{{dateTimeRange}}</h4>
       </label>
-
     </div>
+    <div>
+        <mat-form-field>
+          <input matInput placeholder="EventDescription" formControlName="EventDescription" type="EventDescription">
+        </mat-form-field>
+      </div>
     <div>
       <mat-form-field>
         <input matInput placeholder="VolunteersNeeded" formControlName="VolunteersNeeded" type="VolunteersNeeded">
@@ -59,17 +63,3 @@
 </form>
 
 <a mat-button routerLink="/event">Back to List</a>
-<!-- <div>
-    <mat-form-field style="width:180px">
-      <input matInput [matDatepicker]="Start" format="yyyy-MM-dd" placeholder="Start" formControlName="Start" type="Start">
-      <mat-datepicker-toggle matSuffix [for] ="Start"></mat-datepicker-toggle>
-      <mat-datepicker #Start></mat-datepicker>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field style="width:180px">
-      <input matInput [matDatepicker]="End" format="yyyy-MM-dd" placeholder="End" formControlName="End" type="End">
-      <mat-datepicker-toggle matSuffix [for] ="End"></mat-datepicker-toggle>
-      <mat-datepicker #End></mat-datepicker>
-    </mat-form-field>
-  </div> -->
