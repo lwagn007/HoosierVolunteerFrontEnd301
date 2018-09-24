@@ -32,9 +32,9 @@
       <mat-cell *matCellDef="let event"> {{event.End | date: 'MM/dd/yyyy h:mm a' }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="eventDescription">
-        <mat-header-cell *matHeaderCellDef> Event Description </mat-header-cell>
-        <mat-cell *matCellDef="let event"> {{event.EventDescription}} </mat-cell>
+    <ng-container matColumnDef="eventDescription" hidden>
+        <mat-header-cell *matHeaderCellDef hidden> Event Description </mat-header-cell>
+        <mat-cell *matCellDef="let event" hidden> {{event.EventDescription}} </mat-cell>
       </ng-container>
 
     <ng-container matColumnDef="volunteersNeeded">

@@ -13,11 +13,11 @@ export class EventDeleteComponent implements OnInit {
 
   event: Events;
 
-  constructor(private _form: FormBuilder,
+  constructor( 
     private _eventsService: EventsService,
     private _ar: ActivatedRoute,
     private _router: Router) {
-
+      
     this._ar.paramMap.subscribe(p => {
       this._eventsService.getEvent(p.get('id')).subscribe((singleEvent: Events) => {
         this.event = singleEvent;

@@ -3,6 +3,8 @@ import { EventsService } from '../../services/events.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Events } from '../../models/Events';
+import { OwlDateTimeComponent } from 'ng-pick-datetime';
+import { OwlDateTimeInputDirective } from 'ng-pick-datetime/date-time/date-time-picker-input.directive';
 
 
 @Component({
@@ -15,29 +17,39 @@ export class EventUpdateComponent implements OnInit {
   event: Events;
   
   updateEventForm: FormGroup;
+
   constructor(private _form: FormBuilder,
-              private _eventsService: EventsService,
-              private _ar: ActivatedRoute,
-              private _router: Router) { 
-
-    this._ar.paramMap.subscribe(p=>{
-      this._eventsService.getEvent(p.get('id')).subscribe((singleEvent: Events) => {
-        this.event = singleEvent;
-        this.createForm();
+    private _eventsService: EventsService,
+    private _ar: ActivatedRoute,
+    private _router: Router) { 
+      this._ar.paramMap.subscribe(p=>{
+        this._eventsService.getEvent(p.get('id')).subscribe((singleEvent: Events) => {
+          this.event = singleEvent;
+          this.createForm();
+        });
       });
-    });
-  }
+    }
+    
+    ngOnInit() {
+    
+    }
 
-  ngOnInit() {
-  }
+    startdate = null;
+    enddate = null;
+
+    setDateForm() {
+      this.startdate = this.event.Start,
+      this.enddate = this.event.End
+    }
 
   createForm(){
+    
     this.updateEventForm = this._form.group({
       EventId: new FormControl(this.event.EventId),
       EventTitle: new FormControl(this.event.EventTitle),
       Type: new FormControl(this.event.Type),
-      Start: new FormControl(this.event.Start),
-      End: new FormControl(this.event.End),
+      Start: new FormControl(),
+      End: new FormControl(),
       EventDescription: new FormControl(this.event.EventDescription),
       VolunteersNeeded: new FormControl(this.event.VolunteersNeeded),
       Address: new FormControl(this.event.Address),
@@ -51,6 +63,7 @@ export class EventUpdateComponent implements OnInit {
     this.updateEventForm.value.End = this.updateEventForm.value.End[1]
 
     this.updateEventForm.value.Start = this.updateEventForm.value.Start[0]
+    
     const updateEvent: Events = {
       EventId: form.value.EventId, 
       EventTitle: form.value.EventTitle,

@@ -26,7 +26,7 @@ export class EventsService {
   }
 
   deleteEvent(id: number) {
-    return this._http.delete(`${Api_Url}/Event/Delete?id={id}=${id}`, {headers: this.getHeaders()});
+    return this._http.delete(`${Api_Url}/Event/Delete?id=${id}`, {headers: this.getHeaders()});
   }
 
   private getHeaders() {
