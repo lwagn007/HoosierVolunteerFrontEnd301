@@ -2,8 +2,12 @@
     flex: 1 1 auto;
 }
 
+.navcolor {
+    background-color: #2B4A6F;
+}
+
 .nav-btn {
     margin-right: 0.5em;
-    background-color: purple;
+    background-color: #256F5B;
     color: white;
 }

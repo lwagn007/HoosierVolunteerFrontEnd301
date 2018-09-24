@@ -32,6 +32,7 @@ import { OwlDateTimeModule } from 'ng-pick-datetime';
 import { OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { EventUpdateComponent } from './components/event-update/event-update.component';
 import { EventDeleteComponent } from './components/event-delete/event-delete.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -59,6 +60,7 @@ const routes = [
     EventDetailComponent,
     EventUpdateComponent,
     EventDeleteComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
