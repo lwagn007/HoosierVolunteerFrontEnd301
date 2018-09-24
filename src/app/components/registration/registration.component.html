@@ -1,6 +1,7 @@
-<h1>Register</h1>
+<div class = box>
+  <h1>Register</h1>
 <h4>Create A New Account</h4>
-<hr>
+
 <form (ngSubmit)="onSubmit()" [formGroup]="_registerForm">
   <div>
     <div>
@@ -29,15 +30,15 @@
       </mat-form-field>
     </div>
     <div>
-        <mat-form-field>
-          <input matInput placeholder="Zip" formControlName="zip" type="zip" required/>
-        </mat-form-field>
-      </div>
-      <div>
-          <mat-form-field>
-            <input matInput placeholder="City" formControlName="city" type="city" required/>
-          </mat-form-field>
-        </div>
+      <mat-form-field>
+        <input matInput placeholder="Zip" formControlName="zip" type="zip" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="City" formControlName="city" type="city" required/>
+      </mat-form-field>
+    </div>
     <div>
       <mat-form-field>
         <input matInput placeholder="State" formControlName="state" type="state" required/>
@@ -55,4 +56,8 @@
     </div>
   </div>    
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Register</button>
+  <video id="volunteer_carousel" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="true" src="../../../assets/Home_Assets/registerbluelow.mp4">
+    
+  </video>
 </form>
+</div>
