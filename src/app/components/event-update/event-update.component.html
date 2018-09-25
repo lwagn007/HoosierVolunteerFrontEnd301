@@ -1,6 +1,5 @@
 <h1>Update Event</h1>
-<hr>
-
+<div class = box>
 <div *ngIf="event">
   <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="updateEventForm">
     <div>
@@ -72,3 +71,7 @@
   </form>
 </div>
 <a mat-button routerLink="/event">Back To List</a>
+</div>
+<video id="volunteer_carousel" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="true" src="../../../assets/Home_Assets/registerbluelow.mp4">
+    
+</video>

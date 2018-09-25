@@ -1,0 +1,15 @@
+#volunteer_carousel {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.box{
+    background-color: rgba(185, 196, 208, 0.8);
+    height: 700px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    
+ }
