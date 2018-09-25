@@ -6,5 +6,7 @@
 
 .footerbackground {
     background-color: #2B4A6F;
-    position: bottom;
+    position: fixed;
+    bottom: 0px;
+
 }

@@ -1,0 +1,13 @@
+#volunteer_carousel {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.mat-flat-button{
+color:white;
+background-color: red;
+}
+.mat-primary{
+    color: white;
+}
