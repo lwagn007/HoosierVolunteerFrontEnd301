@@ -1,5 +1,6 @@
 export interface UserInfo {
-    Email: string,
-    HasRegistered: boolean,
+    Email: string;
+    Role: string;
+    HasRegistered: boolean;
     LoginProvider?: any;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, FormControl} from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { IsOrganization } from '../../models/IsOrganization';
 
 @Component({
   selector: 'app-registration',
@@ -18,6 +19,7 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
   }
+  selectedValue: string;
 
   createForm() {
     this._registerForm = this._form.group({
@@ -25,6 +27,7 @@ export class RegistrationComponent implements OnInit {
       firstName: new FormControl,
       lastName: new FormControl,
       phoneNumber: new FormControl,
+      IsOrganization: new FormControl,
       address: new FormControl,
       zip: new FormControl,
       city: new FormControl,
@@ -35,6 +38,9 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit(){
+    if (this._registerForm.value.IsOrganization != true){
+      this._registerForm.value.IsOrganization = false;
+    };
     console.log(this._registerForm.value);
     this._authService
       .register(this._registerForm.value)
