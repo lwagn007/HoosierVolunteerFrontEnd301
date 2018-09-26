@@ -10,7 +10,7 @@ import { IsOrganization } from '../models/IsOrganization';
 
 
 //azure link here
-const Api_Url = 'https://hoosiervolunteer.azurewebsites.net/';
+const Api_Url = 'https://hoosiervolunteer.azurewebsites.net';
 
 @Injectable({
   providedIn: 'root'
