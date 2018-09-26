@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start": "serve -s dist/hoosier-volunteer-front-end301"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +25,7 @@
     "core-js": "^2.5.4",
     "ng-pick-datetime": "^6.0.16",
     "rxjs": "~6.2.0",
+    "serve": "^10.0.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
