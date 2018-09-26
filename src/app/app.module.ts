@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { CanActivate, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import {
@@ -33,17 +33,19 @@ import { OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { EventUpdateComponent } from './components/event-update/event-update.component';
 import { EventDeleteComponent } from './components/event-delete/event-delete.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AuthGuard } from '../app/guards/auth.guard';
+import { RoleguardGuard } from './guards/roleguard.guard';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'event', component: EventsIndexComponent},
   { path: 'event', children:[ 
-    { path: '', component: EventsIndexComponent},
-    { path: 'create', component: EventCreateComponent },
+    { path: 'create', canActivate:[RoleguardGuard], component: EventCreateComponent },
     { path: 'detail/:id', component: EventDetailComponent },
-    { path: 'update/:id', component: EventUpdateComponent },
-    { path: 'delete/:id', component: EventDeleteComponent}
+    { path: 'update/:id', canActivate:[RoleguardGuard], component: EventUpdateComponent },
+    { path: 'delete/:id', canActivate:[RoleguardGuard], component: EventDeleteComponent}
   ]},
   { path: '**', component: HomeComponent },
 ];
@@ -81,10 +83,12 @@ const routes = [
     MatChipsModule,
     MatTableModule,
     OwlDateTimeModule,
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
   ],
   providers: [
     AuthService,
+    RoleguardGuard,
+    AuthGuard,
     EventsService
   ],
   bootstrap: [AppComponent]

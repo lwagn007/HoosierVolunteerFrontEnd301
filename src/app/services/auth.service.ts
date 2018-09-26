@@ -5,6 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs'
+import { UserInfo } from '../models/UserInfo';
+import { IsOrganization } from '../models/IsOrganization';
 
 const Api_Url = 'http://localhost:57751';
 
@@ -14,6 +16,7 @@ const Api_Url = 'http://localhost:57751';
 export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
+  userRole: IsOrganization;
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
@@ -26,14 +29,28 @@ export class AuthService {
     `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
 
     return this._http.post(`${Api_Url}/token`, str).subscribe( (token: Token) => { 
-      this.userInfo = token; localStorage.setItem('id_token', token.access_token); this.isLoggedIn.next(true); this._router.navigate(['/']);
+      this.userInfo = token;
+      localStorage.setItem('id_token', token.access_token);
+      this.isLoggedIn.next(true);
+      this._router.navigate(['/']);
     });
   }
 
   currentUser(): Observable<Object> {
     if (!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)); }
-
+    
     return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() });
+  }
+
+  getRole(){
+    if(!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)) }
+
+    return this._http.get(`${Api_Url}/api/Account/GetRole`, { headers: this.setHeader() } ).subscribe((isOrganization: IsOrganization) =>{
+        this.userRole = isOrganization
+        localStorage.setItem('userRole', isOrganization.Role);
+        console.log(localStorage.getItem('userRole'));
+    }
+    );
   }
 
   logout(): Observable<Object> {

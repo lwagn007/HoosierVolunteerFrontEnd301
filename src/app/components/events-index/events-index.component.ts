@@ -16,7 +16,8 @@ export class EventsIndexComponent implements OnInit {
   constructor(private _eventsService: EventsService) { }
 
   ngOnInit() {
-    this._eventsService.getNotes().subscribe((events: Events[]) => {
+    this._eventsService.getEvents().subscribe((events: Events[]) => {
+      console.log('id_token');
       this.dataSource = new MatTableDataSource<Events>(events);
     });
   }

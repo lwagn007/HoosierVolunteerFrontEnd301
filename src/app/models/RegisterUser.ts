@@ -3,6 +3,7 @@ export interface RegisterUser {
     firstName: string;
     lastName: string;
     phoneNumber: string;
+    IsOrganization: boolean;
     address: string;
     zip: string;
     city: string;

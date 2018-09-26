@@ -1,63 +1,68 @@
-<div class = box>
+<div class=box>
   <h1>Register</h1>
-<h4>Create A New Account</h4>
+  <h4>Create A New Account</h4>
 
-<form (ngSubmit)="onSubmit()" [formGroup]="_registerForm">
-  <div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="_registerForm">
     <div>
-      <mat-form-field>
-        <input matInput placeholder="Email" formControlName="email" type="email" required/>
-      </mat-form-field>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" type="email" required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="First Name" formControlName="firstName" type="firstName" required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Last Name" formControlName="lastName" type="lastName" required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Phone Number" formControlName="phoneNumber" type="phoneNumber" required />
+        </mat-form-field>
+      </div>
+      <div>
+        <label>
+          <span>Are you a business?</span><input type="checkbox" formControlName="IsOrganization">
+        </label>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="address" type="address" required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Zip" formControlName="zip" type="zip" required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="City" formControlName="city" type="city" required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="State" formControlName="state" type="state" required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Password" formControlName="password" type="password" required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" required />
+        </mat-form-field>
+      </div>
     </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="First Name" formControlName="firstName" type="firstName" required/>
-      </mat-form-field>
-    </div>    
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Last Name" formControlName="lastName" type="lastName" required/>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Phone Number" formControlName="phoneNumber" type="phoneNumber" required/>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Address" formControlName="address" type="address" required/>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Zip" formControlName="zip" type="zip" required/>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="City" formControlName="city" type="city" required/>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="State" formControlName="state" type="state" required/>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Password" formControlName="password" type="password" required/>
-      </mat-form-field>
-    </div>    
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" required/>
-      </mat-form-field>
-    </div>
-  </div>    
-  <button mat-raised-button class="nav-btn" color="primary" type="submit">Register</button>
-  <video id="volunteer_carousel" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="true" src="../../../assets/Home_Assets/registerbluelow.mp4">
-    
-  </video>
-</form>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Register</button>
+    <video id="volunteer_carousel" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="true" src="../../../assets/Home_Assets/registerbluelow.mp4">
+
+    </video>
+  </form>
 </div>
