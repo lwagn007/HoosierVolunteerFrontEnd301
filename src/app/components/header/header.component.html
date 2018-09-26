@@ -2,12 +2,36 @@
   <span>Hoosier Volunteers</span>
   <span class="example-fill-remaining-space"></span>
   <div class="button-row">
-    <button mat-raised-button routerLink="/register">Register</button>
-     <button mat-raised-button color="primary" routerLink="/login">Log In</button>
-    <a mat-raised-button routerLink="aboutus">About Us</a>
-    <button mat-raised-button color="primary" routerLink="/event/create">Create an Event</button>
-    <button mat-raised-button routerLink="/event/delete/1">Delete an Event</button>
-    <button mat-raised-button color="primary" routerLink="/event">See All Events</button>
-    <button mat-raised-button routerLink="/home">Sign Out</button>
+    
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/register">
+        <span>Register</span>
+      </button>
+      <button mat-menu-item routerLink="/register">
+        <span>Log In</span>
+      </button>
+      <button mat-menu-item routerLink="/register">
+        <span>About Us</span>
+      </button>
+      <button mat-menu-item routerLink="/event/create">
+        <span>Create Event</span>
+      </button>
+      <button mat-menu-item routerLink="/event/delete/1">
+        <span>Delete Event</span>
+      </button>
+      <button mat-menu-item routerLink="/register">
+        <span>List Events</span>
+      </button>
+      <button mat-menu-item routerLink="/home">
+        <span>Sign Out</span>
+      </button>
+    </mat-menu>
+    
+    
+    
+    
     </div>
 </mat-toolbar>
