@@ -6,7 +6,9 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs'
 
-const Api_Url = 'http://localhost:57751';
+
+//azure link here
+const Api_Url = 'https://hoosiervolunteer.azurewebsites.net/';
 
 @Injectable({
   providedIn: 'root'
