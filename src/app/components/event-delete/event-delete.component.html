@@ -1,0 +1,23 @@
+<h1>Delete</h1>
+<h4>Are you sure you want to delete this event?</h4>
+<div class = box>
+<div *ngIf="event" >
+  <div hidden>
+    <label for="">Event Id: </label>
+    <span>{{event.EventId}}</span>
+  </div>
+  <div>
+    <label for="">Event Title: </label>
+    <span>{{event.EventTitle}}</span>
+  </div>
+  <div>
+    <label for="">Event Description: </label>
+    <span>{{event.EventDescription}}</span>
+  </div>
+</div>
+<button mat-flat-button="warn" (click)="onDelete()">Delete</button>
+<button mat-button color="primary" routerLink="/event">Back To List</button>
+</div>
+<video id="volunteer_carousel" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="true" src="../../../assets/Home_Assets/registerbluelow.mp4">
+    
+</video>

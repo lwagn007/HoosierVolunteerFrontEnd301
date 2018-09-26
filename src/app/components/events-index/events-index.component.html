@@ -1,0 +1,61 @@
+<h1>Volunteer Opportunities</h1>
+<a mat-raised-button color="primary" routerLink="/event/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns columnNames;"></mat-row>
+
+    <ng-container matColumnDef="eventId">
+      <mat-header-cell *matHeaderCellDef> Event Id </mat-header-cell>
+      <mat-cell *matCellDef="let event"> {{event.EventId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="eventTitle">
+      <mat-header-cell *matHeaderCellDef> Event </mat-header-cell>
+      <mat-cell *matCellDef="let event"> {{event.EventTitle}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+      <mat-cell *matCellDef="let event"> {{event.Type}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="eventRange_Start">
+      <mat-header-cell *matHeaderCellDef> Event Start </mat-header-cell>
+      <mat-cell *matCellDef="let event"> {{event.Start | date: 'MM/dd/yyyy h:mm a' }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="eventRange_End">
+      <mat-header-cell *matHeaderCellDef> Event End </mat-header-cell>
+      <mat-cell *matCellDef="let event"> {{event.End | date: 'MM/dd/yyyy h:mm a' }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="eventDescription" hidden>
+        <mat-header-cell *matHeaderCellDef hidden> Event Description </mat-header-cell>
+        <mat-cell *matCellDef="let event" hidden> {{event.EventDescription}} </mat-cell>
+      </ng-container>
+
+    <ng-container matColumnDef="volunteersNeeded">
+      <mat-header-cell *matHeaderCellDef> Volunteers Needed </mat-header-cell>
+      <mat-cell *matCellDef="let event"> {{event.VolunteersNeeded}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef> Event Address </mat-header-cell>
+      <mat-cell *matCellDef="let event"> {{event.Address}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let event">
+        <i class="material-icons" routerLink="/event/detail/{{event.EventId}}">library_books</i>
+        <i mat-icon class="material-icons" routerLink="/event/update/{{event.EventId}}">update</i>
+        <i class="material-icons" routerLink="/event/delete/{{event.EventId}}">delete</i>
+      </mat-cell>
+    </ng-container>
+  </mat-table>
+</div>
+
+<!-- {{event.Start | date: 'MM/dd/yyyy h:mm a' }} -->
