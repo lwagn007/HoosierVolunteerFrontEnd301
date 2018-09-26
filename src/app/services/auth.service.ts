@@ -8,7 +8,9 @@ import { Subject } from 'rxjs'
 import { UserInfo } from '../models/UserInfo';
 import { IsOrganization } from '../models/IsOrganization';
 
-const Api_Url = 'http://localhost:57751';
+
+//azure link here
+const Api_Url = 'https://hoosiervolunteer.azurewebsites.net/';
 
 @Injectable({
   providedIn: 'root'
