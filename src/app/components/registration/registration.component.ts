@@ -11,7 +11,7 @@ import { IsOrganization } from '../../models/IsOrganization';
 
 export class RegistrationComponent implements OnInit {
 
-  private _registerForm: FormGroup;
+  public _registerForm: FormGroup;
 
   constructor(private _form: FormBuilder, private _authService: AuthService) { 
     this.createForm();
