@@ -34,6 +34,7 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
+      this.getRole();
       this._router.navigate(['/']);
     });
   }
