@@ -52,9 +52,9 @@
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let event">
-        <i class="material-icons" routerLink="/event/detail/{{event.EventId}}">library_books</i>
-        <i mat-icon class="material-icons" routerLink="/event/update/{{event.EventId}}">update</i>
-        <i class="material-icons" routerLink="/event/delete/{{event.EventId}}">delete</i>
+        <li class="material-icons" routerLink="/event/detail/{{event.EventId}}">library_books</li>
+        <li mat-icon class="material-icons" routerLink="/event/update/{{event.EventId}}">update</li>
+        <li class="material-icons" routerLink="/event/delete/{{event.EventId}}">delete</li>
       </mat-cell>
     </ng-container>
   </mat-table>

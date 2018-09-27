@@ -3,3 +3,6 @@
     height:auto;
     display:inline-block;
 }
+li { 
+    cursor: pointer; 
+}
