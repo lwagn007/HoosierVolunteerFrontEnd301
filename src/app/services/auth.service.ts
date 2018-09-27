@@ -4,10 +4,9 @@ import { Token } from '../models/Token';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Subject } from 'rxjs'
 import { UserInfo } from '../models/UserInfo';
 import { IsOrganization } from '../models/IsOrganization';
-
+import { Subject } from 'rxjs';
 
 //azure link here
 const Api_Url = 'https://hoosiervolunteer.azurewebsites.net';
@@ -17,6 +16,7 @@ const Api_Url = 'https://hoosiervolunteer.azurewebsites.net';
 })
 export class AuthService {
   userInfo: Token;
+  userData: Subject<{}>;
   isLoggedIn = new Subject<boolean>();
   userRole: IsOrganization;
 
