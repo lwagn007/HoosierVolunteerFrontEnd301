@@ -2,7 +2,10 @@
   <span>Hoosier Volunteers</span>
   <span class="example-fill-remaining-space"></span>
   <div class="button-row">
-    
+    <div *ngIf="IsLoggedIn; else auth">
+      <span>Welcome, {{userName}}</span>
+      <button mat-raised-button class="nav-btn" color="primary" (click)="onLogOut">Log Out</button>
+      </div>
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
@@ -29,9 +32,5 @@
         <span>Sign Out</span>
       </button>
     </mat-menu>
-    
-    
-    
-    
-    </div>
+  </div>
 </mat-toolbar>
