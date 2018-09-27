@@ -2,7 +2,7 @@
   <span>Hoosier Volunteers</span>
   <span class="example-fill-remaining-space"></span>
   <div class="button-row">
-    <div *ngIf="IsLoggedIn; else auth">
+    <div *ngIf="isLoggedIn; else auth">
       <span>Welcome, {{userName}}</span>
       <button mat-raised-button class="nav-btn" color="primary" (click)="onLogOut">Log Out</button>
       </div>
