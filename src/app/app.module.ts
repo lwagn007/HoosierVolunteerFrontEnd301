@@ -35,11 +35,13 @@ import { EventDeleteComponent } from './components/event-delete/event-delete.com
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthGuard } from '../app/guards/auth.guard';
 import { RoleguardGuard } from './guards/roleguard.guard';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'aboutus', component: AboutusComponent },
   { path: 'event', component: EventsIndexComponent},
   { path: 'event', children:[ 
     { path: 'create', canActivate:[RoleguardGuard], component: EventCreateComponent },
@@ -63,6 +65,7 @@ const routes = [
     EventUpdateComponent,
     EventDeleteComponent,
     FooterComponent,
+    AboutusComponent,
   ],
   imports: [
     BrowserModule,
