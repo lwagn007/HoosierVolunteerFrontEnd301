@@ -14,6 +14,7 @@ import {
   MatInputModule,
   MatChipsModule,
   MatTableModule,
+  MatDialogModule,
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -65,7 +66,7 @@ const routes = [
     EventUpdateComponent,
     EventDeleteComponent,
     FooterComponent,
-    AboutusComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
@@ -87,6 +88,7 @@ const routes = [
     MatTableModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
+    MatDialogModule,
   ],
   providers: [
     AuthService,
