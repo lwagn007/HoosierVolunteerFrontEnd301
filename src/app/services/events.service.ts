@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Events } from '../models/Events';
 
-const Api_Url = 'https://hoosiervolunteer.azurewebsites.net';
+const Api_Url = 'https://hoosiervolunteer.azurewebsites.net/';
 
 @Injectable()
 export class EventsService {
