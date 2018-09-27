@@ -2,7 +2,7 @@
   <span>Hoosier Volunteers</span>
   <span class="example-fill-remaining-space"></span>
   <div class="button-row">
-    <div *ngIf="isLoggedIn; else auth">
+    <div *ngIf="isLoggedIn">
       <span>Welcome, {{userName}}</span>
       <button mat-raised-button class="nav-btn" color="primary" (click)="onLogOut">Log Out</button>
       </div>
@@ -13,22 +13,22 @@
       <button mat-menu-item routerLink="/register">
         <span>Register</span>
       </button>
-      <button mat-menu-item routerLink="/register">
+      <button mat-menu-item routerLink="/login">
         <span>Log In</span>
       </button>
-      <button mat-menu-item routerLink="/register">
+      <button mat-menu-item routerLink="/aboutus">
         <span>About Us</span>
       </button>
       <button mat-menu-item routerLink="/event/create">
         <span>Create Event</span>
       </button>
-      <button mat-menu-item routerLink="/event/delete/1">
+      <button mat-menu-item routerLink="/event/delete/:id">
         <span>Delete Event</span>
       </button>
-      <button mat-menu-item routerLink="/register">
+      <button mat-menu-item routerLink="/event"> 
         <span>List Events</span>
       </button>
-      <button mat-menu-item routerLink="/home">
+      <button mat-menu-item routerLink="/home"> <!-- sign out routing -->
         <span>Sign Out</span>
       </button>
     </mat-menu>
