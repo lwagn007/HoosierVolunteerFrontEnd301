@@ -1,8 +1,4 @@
 
-
-
-
-
 export let APIURL = '';
 ​
 switch (window.location.hostname) {
@@ -16,10 +12,6 @@ switch (window.location.hostname) {
         APIURL = 'http://localhost:4200';
         
 }
-
-
-
-
 
 export const environment = {
   production: true
