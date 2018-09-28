@@ -37,6 +37,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AuthGuard } from '../app/guards/auth.guard';
 import { RoleguardGuard } from './guards/roleguard.guard';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { EventMapComponent } from './components/event-map/event-map.component';
+import { AgmCoreModule } from '@agm/core';
+
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -48,7 +51,8 @@ const routes = [
     { path: 'create', canActivate:[RoleguardGuard], component: EventCreateComponent },
     { path: 'detail/:id', component: EventDetailComponent },
     { path: 'update/:id', canActivate:[RoleguardGuard], component: EventUpdateComponent },
-    { path: 'delete/:id', canActivate:[RoleguardGuard], component: EventDeleteComponent}
+    { path: 'delete/:id', canActivate:[RoleguardGuard], component: EventDeleteComponent},
+    { path: 'event-map', component: EventMapComponent}
   ]},
   { path: '**', component: HomeComponent },
 ];
@@ -66,7 +70,8 @@ const routes = [
     EventUpdateComponent,
     EventDeleteComponent,
     FooterComponent,
-    AboutusComponent
+    AboutusComponent,
+    EventMapComponent
   ],
   imports: [
     BrowserModule,
@@ -89,12 +94,16 @@ const routes = [
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
     MatDialogModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCiTUv5pRwFj1JbMcyWnm5DIhkvvTx2vkM' //Google API key for maps
+    })
   ],
   providers: [
     AuthService,
     RoleguardGuard,
     AuthGuard,
-    EventsService
+    EventsService,
+    AgmCoreModule
   ],
   bootstrap: [AppComponent]
 })
