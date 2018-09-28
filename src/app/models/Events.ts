@@ -10,4 +10,6 @@ export interface Events {
     City: string;
     State: string;
     EventDescription: string;
+    Latitude?: string;
+    Longitude?: string;
 }

@@ -1,0 +1,19 @@
+<h1>Events Map</h1>
+<a mat-raised-button color="primary" routerLink="/event/create">Create New</a>
+<hr>
+
+<style>
+  agm-map {
+    height: 500px;
+    width: 100%;
+    align-content: center;
+  }
+</style>
+
+<div style="align-content:center;">
+  <agm-map [latitude]="39.7684" [longitude]="-86.1581">
+   <li *ngFor= "let event of dataSource">
+      <agm-marker [animation]="BOUNCE" [label]= "event.EventTitle" [latitude]= "event.Latitude" [longitude]= "event.Longitude" routerLink="/event/detail/{{event.EventId}}" ></agm-marker>
+    </li>
+  </agm-map>
+</div>
