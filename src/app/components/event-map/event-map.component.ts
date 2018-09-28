@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
+import { Router } from '@angular/router';
 import { EventsService } from '../../services/events.service';
 import { Events } from '../../models/Events';
 
@@ -11,7 +12,7 @@ import { Events } from '../../models/Events';
 export class EventMapComponent implements OnInit {
 
   dataSource: Events[];
-  constructor(private _eventsService: EventsService) { }
+  constructor(private _eventsService: EventsService, private _router: Router) { }
   
   @Input('markerClickable') clickable: boolean = true;
 
@@ -22,4 +23,7 @@ export class EventMapComponent implements OnInit {
     });
   }
 
+  goToEvent(id){
+    this._router.navigate(['/event/detail/' + id]);
+  }
 }

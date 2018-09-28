@@ -14,7 +14,13 @@
 <div style="align-content:center;">
   <agm-map [latitude]="39.7684" [longitude]="-86.1581">
    <li *ngFor= "let event of dataSource">
-      <agm-marker [animation]="BOUNCE" [label]= "event.EventTitle" [latitude]= "event.Latitude" [longitude]= "event.Longitude" routerLink="/event/detail/{{event.EventId}}" ></agm-marker>
+      <agm-marker (markerClick)="goToEvent(event.EventId)" [animation]="BOUNCE" [label]= "event.EventTitle" [latitude]= "event.Latitude" [longitude]= "event.Longitude"></agm-marker>
     </li>
   </agm-map>
 </div>
+
+<script>
+  function goToEvent(id) {
+    Console.log(id);
+  }
+</script>
