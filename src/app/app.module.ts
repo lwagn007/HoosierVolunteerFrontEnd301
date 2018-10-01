@@ -39,6 +39,7 @@ import { RoleguardGuard } from './guards/roleguard.guard';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { EventMapComponent } from './components/event-map/event-map.component';
 import { AgmCoreModule } from '@agm/core';
+import { HomebuttonComponent } from './components/homebutton/homebutton.component';
 
 
 const routes = [
@@ -71,7 +72,8 @@ const routes = [
     EventDeleteComponent,
     FooterComponent,
     AboutusComponent,
-    EventMapComponent
+    EventMapComponent,
+    HomebuttonComponent
   ],
   imports: [
     BrowserModule,
