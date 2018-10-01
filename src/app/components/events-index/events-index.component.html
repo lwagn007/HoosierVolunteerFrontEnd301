@@ -23,7 +23,7 @@
       <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
       <mat-cell *matCellDef="let event"> {{event.Type}} </mat-cell>
     </ng-container>
-    
+
     <ng-container matColumnDef="eventRange_Start">
       <mat-header-cell *matHeaderCellDef> Event Start </mat-header-cell>
       <mat-cell *matCellDef="let event"> {{event.Start | date: 'MM/dd/yyyy h:mm a' }} </mat-cell>
@@ -34,10 +34,10 @@
       <mat-cell *matCellDef="let event"> {{event.End | date: 'MM/dd/yyyy h:mm a' }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="eventDescription" hidden>
-        <mat-header-cell *matHeaderCellDef hidden> Event Description </mat-header-cell>
-        <mat-cell *matCellDef="let event" hidden> {{event.EventDescription}} </mat-cell>
-      </ng-container>
+    <ng-container matColumnDef="eventDescription">
+      <mat-header-cell *matHeaderCellDef hidden> Event Description </mat-header-cell>
+      <mat-cell *matCellDef="let event" hidden> {{event.EventDescription}} </mat-cell>
+    </ng-container>
 
     <ng-container matColumnDef="volunteersNeeded">
       <mat-header-cell *matHeaderCellDef> Volunteers Needed </mat-header-cell>
