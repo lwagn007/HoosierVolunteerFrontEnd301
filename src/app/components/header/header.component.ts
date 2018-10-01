@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { getOrCreateElementRef } from '@angular/core/src/render3/di';
 
 @Component({
   selector: 'app-header',
@@ -22,6 +23,12 @@ export class HeaderComponent implements OnInit {
     if(localStorage.getItem('id_token')){
       this.isLoggedIn = true;
       this.userName = localStorage.getItem('user');
+      if(localStorage.getItem('userRole') == "Admin"){
+        this.isOrganization = true;
+      }
+      else{
+        this.isOrganization = false;
+      }
     }
   }
   

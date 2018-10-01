@@ -9,7 +9,10 @@ import { MatTableDataSource } from '@angular/material';
   styleUrls: ['./events-index.component.css']
 })
 export class EventsIndexComponent implements OnInit {
-
+  userName: string;
+  isLoggedIn: boolean;
+  isOrganization: boolean; 
+  
   columnNames = ['eventTitle', 'eventRange_Start', 'eventRange_End', 'volunteersNeeded', 'address', 'buttons'];
   dataSource: MatTableDataSource<Events>
 
@@ -19,6 +22,17 @@ export class EventsIndexComponent implements OnInit {
     this._eventsService.getEvents().subscribe((events: Events[]) => {
       console.log('id_token');
       this.dataSource = new MatTableDataSource<Events>(events);
+
+      if(localStorage.getItem('id_token')){
+        this.isLoggedIn = true;
+        this.userName = localStorage.getItem('user');
+        if(localStorage.getItem('userRole') == "Admin"){
+          this.isOrganization = true;
+        }
+        else{
+          this.isOrganization = false;
+        }
+      }
     });
   }
 }
