@@ -5,31 +5,31 @@
     <div>
       <div hidden>
         <mat-form-field>
-          <input matInput placeholder="EventId" formControlName="EventId" type="EventId" required [value]="event.EventId" />
+          <input matInput placeholder="EventId" formControlName="EventId" type="EventId" required [value]="event.EventId" required />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="EventTitle" formControlName="EventTitle" type="EventTitle" [value]="event.EventTitle" />
+          <input matInput placeholder="EventTitle" formControlName="EventTitle" type="EventTitle" [value]="event.EventTitle" required/>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="Type" formControlName="Type" type="Type" [value]="event.Type" />
+          <input matInput placeholder="Type" formControlName="Type" type="Type" [value]="event.Type" required/>
         </mat-form-field>
       </div>
       <div class="example-wrapper" style="width: 180px; display: inline-block">
         <label class="example-input-wrapper">
           Date Start:
           <input placeholder="Date Start:" formControlName="Start" [selectMode]="'rangeFrom'" [owlDateTimeTrigger]="StartDate"
-            [owlDateTime]="StartDate">
+            [owlDateTime]="StartDate" required>
           <owl-date-time #StartDate></owl-date-time>
         </label>
         <br />
         <label class="example-input-wrapper">
           Date End:
           <input placeholder="Date End:" formControlName="End" [selectMode]="'rangeTo'" [owlDateTimeTrigger]="EndDate"
-            [owlDateTime]="EndDate" [value]="event.Start">
+            [owlDateTime]="EndDate" [value]="event.End" required>
           <owl-date-time #EndDate></owl-date-time>
           <h4>{{dateTimeRange}}</h4>
         </label>
@@ -37,33 +37,33 @@
         <div>
           <mat-form-field>
             <input matInput placeholder="EventDescription" formControlName="EventDescription" type="EventDescription"
-              [value]="event.EventDescription" />
+              [value]="event.EventDescription" required/>
           </mat-form-field>
         </div>
         <div>
           <mat-form-field>
             <input matInput placeholder="VolunteersNeeded" formControlName="VolunteersNeeded" type="VolunteersNeeded"
-              [value]="event.VolunteersNeeded" />
+              [value]="event.VolunteersNeeded" required/>
           </mat-form-field>
         </div>
         <div>
           <mat-form-field>
-            <input matInput placeholder="Address" formControlName="Address" type="Address" [value]="event.Address" />
+            <input matInput placeholder="Address" formControlName="Address" type="Address" [value]="event.Address" required/>
           </mat-form-field>
         </div>
         <div>
           <mat-form-field>
-            <input matInput placeholder="Zip" formControlName="Zip" type="Zip" [value]="event.Zip" />
+            <input matInput placeholder="Zip" formControlName="Zip" type="Zip" [value]="event.Zip" required/>
           </mat-form-field>
         </div>
         <div>
           <mat-form-field>
-            <input matInput placeholder="City" formControlName="City" type="City" [value]="event.City" />
+            <input matInput placeholder="City" formControlName="City" type="City" [value]="event.City" required/>
           </mat-form-field>
         </div>
         <div>
           <mat-form-field>
-            <input matInput placeholder="State" formControlName="State" type="State" [value]="event.State" />
+            <input matInput placeholder="State" formControlName="State" type="State" [value]="event.State" required/>
           </mat-form-field>
         </div>
       </div>

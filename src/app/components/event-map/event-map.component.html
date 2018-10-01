@@ -6,13 +6,14 @@
 
 <style>
   agm-map {
-    height: 500px;
+    height: 100%;
     width: 100%;
     align-content: center;
   }
 </style>
 
-<div style="align-content:center;">
+<div style="align-content:center; height: 75vh;
+width: 100%;">
   <agm-map [latitude]="39.7684" [longitude]="-86.1581">
    <li *ngFor= "let event of dataSource">
       <agm-marker (markerClick)="goToEvent(event.EventId)" [animation]="BOUNCE" [label]= "event.EventTitle" [latitude]= "event.Latitude" [longitude]= "event.Longitude"></agm-marker>
