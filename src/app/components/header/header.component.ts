@@ -8,34 +8,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   userName: string;
-  LoggedIn: boolean; 
+  isLoggedIn: boolean; 
 
   constructor(public router: Router, public _authService: AuthService) { }
 
   ngOnInit() {
-    this._authService.userData.subscribe((d: UserData) => {
-      console.log('the value of data', d);
-      this.userName = d.user;
-      this.LoggedIn = d.LoggedIn;
-    });
+    // this._authService.userInfo.subscribe((d: UserData) => {
+    //   this.isLoggedIn = d.isLoggedIn;
+    // });
 
     if(localStorage.getItem('id_token')){
-      this.LoggedIn = true;
+      this.isLoggedIn = true;
       this.userName = localStorage.getItem('user');
     }
   }
   
   onLogOut(){
     this._authService.logout();
-    this.LoggedIn = false;
+    this.isLoggedIn = false;
     this.router.navigate(['/login']);
   }
 }
 
 export interface UserData {
   user:string;
-  name:string;
-  LoggedIn: boolean;
+  userName:string;
+  email: string;
+  isLoggedIn: boolean;
 }

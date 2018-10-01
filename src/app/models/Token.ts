@@ -6,4 +6,5 @@ export interface Token {
     expires_in: number;
     issued: Date;
     expires: Date;
+    email: string;
 }
