@@ -1,0 +1,11 @@
+.box{
+    padding-top: 10px;
+    background-color: rgba(185, 196, 208, 0.8);
+    height: 100%;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}

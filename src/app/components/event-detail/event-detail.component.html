@@ -1,6 +1,7 @@
 <h1>Event Details</h1>
 <hr>
 
+<div class = "box">
 <div *ngIf="event">
   
   <div>
@@ -53,6 +54,8 @@
     <span>{{event.State}}</span>
   </div>
 </div>
+</div>
 
+<a href="https://maps.google.com/maps?saddr=My+Location&daddr={{event.Address}}" mat-raised-button color="primary">Directions To Event</a>
 <button mat-button color="accent" routerLink="/event/update/{id}">Edit</button>
 <button mat-button color="primary" routerLink="/event">Back to List</button>
