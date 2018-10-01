@@ -1,5 +1,5 @@
 <h1>Volunteer Opportunities</h1>
-<a mat-raised-button color="primary" routerLink="/event/create">Create New</a>
+<a *ngIf="isOrganization" mat-raised-button color="primary" routerLink="/event/create">Create New</a>
 <div class="divider"></div>
 <a mat-raised-button color="primary" routerLink="/event/event-map">Event Locations</a>
 <hr>
@@ -43,11 +43,9 @@
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let event">
         <li class="material-icons" routerLink="/event/detail/{{event.EventId}}">library_books</li>
-        <li mat-icon class="material-icons" routerLink="/event/update/{{event.EventId}}">update</li>
-        <li class="material-icons" routerLink="/event/delete/{{event.EventId}}">delete</li>
+        <li *ngIf="isOrganization" mat-icon class="material-icons" routerLink="/event/update/{{event.EventId}}">update</li>
+        <li *ngIf="isOrganization" class="material-icons" routerLink="/event/delete/{{event.EventId}}">delete</li>
       </mat-cell>
     </ng-container>
   </mat-table>
 </div>
-
-<!-- {{event.Start | date: 'MM/dd/yyyy h:mm a' }} -->

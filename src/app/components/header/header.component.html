@@ -2,31 +2,28 @@
   <button mat-button routerLink="/home">Hoosier Volunteers</button>
   <span *ngIf="isLoggedIn">{{userName}}</span>
   <span class="example-fill-remaining-space"></span>
+    <span *ngIf="isOrganization" mat-menu-item routerLink="/event/create">
+      Create Event
+    </span>
   <div class="button-row">
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
-    <mat-menu #auth #menu="matMenu">
-      <button mat-menu-item routerLink="/register">
+    <mat-menu #menu="matMenu">
+      <button *ngIf="!isLoggedIn" mat-menu-item routerLink="/register">
         <span>Register</span>
       </button>
-      <button mat-menu-item routerLink="/login">
+      <button *ngIf="!isLoggedIn" mat-menu-item routerLink="/login">
         <span>Log In</span>
+      </button>
+      <button *ngIf="isLoggedIn" mat-menu-item (click)="onLogOut()" routerLink="/login">
+        <span>Logout</span>
       </button>
       <button mat-menu-item routerLink="/aboutus">
         <span>About Us</span>
       </button>
-      <button mat-menu-item routerLink="/event/create">
-        <span>Create Event</span>
-      </button>
-      <button mat-menu-item routerLink="/event/delete/:id">
-        <span>Delete Event</span>
-      </button>
-      <button mat-menu-item routerLink="/event"> 
+      <button mat-menu-item routerLink="/event">
         <span>List Events</span>
-      </button>
-      <button mat-menu-item routerLink="/home"> <!-- sign out routing -->
-        <span>Sign Out</span>
       </button>
     </mat-menu>
   </div>
