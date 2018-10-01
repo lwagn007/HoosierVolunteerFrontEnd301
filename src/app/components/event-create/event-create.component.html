@@ -4,58 +4,58 @@
   <div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Event Title" formControlName="EventTitle" type="EventTitle">
+        <input matInput placeholder="Event Title" formControlName="EventTitle" type="EventTitle" required>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Type" formControlName="Type" type="Type">
+        <input matInput placeholder="Type" formControlName="Type" type="Type" required>
       </mat-form-field>
     </div>
-    <div class="example-wrapper" style="width: 180px; display: inline-block">
+    <div class="example-wrapper" style="width: 180px; display: inline-block" required>
       <label class="example-input-wrapper">
         Date Start:
         <input placeholder="Date Start:" formControlName="Start" [selectMode]="'rangeFrom'" [owlDateTimeTrigger]="StartDate"
-          [owlDateTime]="StartDate">
+          [owlDateTime]="StartDate" required>
         <owl-date-time #StartDate></owl-date-time>
       </label>
       <br />
       <label class="example-input-wrapper">
         Date End:
         <input placeholder="Date End:" formControlName="End" [selectMode]="'rangeTo'" [owlDateTimeTrigger]="EndDate"
-          [owlDateTime]="EndDate">
+          [owlDateTime]="EndDate" required>
         <owl-date-time #EndDate></owl-date-time>
         <h4>date time error here</h4>
       </label>
     </div>
     <div>
         <mat-form-field>
-          <input matInput placeholder="Event Description" formControlName="EventDescription" type="EventDescription">
+          <input matInput placeholder="Event Description" formControlName="EventDescription" type="EventDescription" required>
         </mat-form-field>
       </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Volunteers Needed" formControlName="VolunteersNeeded" type="VolunteersNeeded">
+        <input matInput placeholder="Volunteers Needed" formControlName="VolunteersNeeded" type="VolunteersNeeded" required>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Address" formControlName="Address" type="Address">
+        <input matInput placeholder="Address" formControlName="Address" type="Address" required>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Zip" formControlName="Zip" type="Zip">
+        <input matInput placeholder="Zip" formControlName="Zip" type="Zip" required>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="City" formControlName="City" type="City">
+        <input matInput placeholder="City" formControlName="City" type="City" required>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="State" formControlName="State" type="State">
+        <input matInput placeholder="State" formControlName="State" type="State" required>
       </mat-form-field>
     </div>
   </div>
