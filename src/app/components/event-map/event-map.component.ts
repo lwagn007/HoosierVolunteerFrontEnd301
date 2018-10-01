@@ -10,7 +10,9 @@ import { Events } from '../../models/Events';
   styleUrls: ['./event-map.component.css']
 })
 export class EventMapComponent implements OnInit {
-
+  userName: string;
+  isLoggedIn: boolean;
+  isOrganization: boolean; 
   dataSource: Events[];
   constructor(private _eventsService: EventsService, private _router: Router) { }
   
@@ -21,6 +23,17 @@ export class EventMapComponent implements OnInit {
       console.log('id_token');
       this.dataSource = events;
     });
+
+    if(localStorage.getItem('id_token')){
+      this.isLoggedIn = true;
+      this.userName = localStorage.getItem('user');
+      if(localStorage.getItem('userRole') == "Admin"){
+        this.isOrganization = true;
+      }
+      else{
+        this.isOrganization = false;
+      }
+    }
   }
 
   goToEvent(id){
