@@ -2,54 +2,57 @@
 <hr>
 
 <div *ngIf="event">
+  
   <div>
-    <label for="">EventId:</label>
-    <span>{{event.EventId}}</span>
-  </div>
-  <div>
-    <label for="">EventTitle:</label>
+    <label for="">EventTitle: </label>
     <span>{{event.EventTitle}}</span>
   </div>
+  <p></p>
   <div>
-    <label for="">Type:</label>
+    <label for="">Type: </label>
     <span>{{event.Type}}</span>
   </div>
+  <p></p>
   <div>
-    <label for="">Description:</label>
+    <label for="">Description: </label>
     <span>{{event.EventDescription}}</span>
   </div>
+  <p></p>
   <div>
-    <label for="">Start:</label>
+    <label for="">Start: </label>
     <span>{{event.Start | date: 'MM/dd/yyyy h:mm a' }}</span>
   </div>
+  <p></p>
   <div>
-    <label for="">End:</label>
+    <label for="">End: </label>
     <span>{{event.End | date: 'MM/dd/yyyy h:mm a' }}</span>
   </div>
+  <p></p>
   <div>
-    <label for="">Volunteers Needed:</label>
+    <label for="">Volunteers Needed: </label>
     <span>{{event.VolunteersNeeded}}</span>
   </div>
+  <p></p>
   <div>
-    <label for="">Address:</label>
+    <label for="">Address: </label>
     <span>{{event.Address}}</span>
   </div>
+  <p></p>
   <div>
-    <label for="">Zip:</label>
+    <label for="">Zip: </label>
     <span>{{event.Zip}}</span>
   </div>
+  <p></p>
   <div>
-    <label for="">City:</label>
+    <label for="">City: </label>
     <span>{{event.City}}</span>
   </div>
+  <p></p>
   <div>
-    <label for="">State:</label>
+    <label for="">State: </label>
     <span>{{event.State}}</span>
   </div>
 </div>
 
 <button mat-button color="accent" routerLink="/event/update/{id}">Edit</button>
 <button mat-button color="primary" routerLink="/event">Back to List</button>
-<video id="volunteer_carousel" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="true" src="../../../assets/Home_Assets/registerbluelow.mp4">
-    
-</video>
