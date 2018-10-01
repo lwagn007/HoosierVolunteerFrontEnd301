@@ -1,5 +1,5 @@
 <h1>Events Map</h1>
-<a mat-raised-button color="primary" routerLink="/event/create">Create New</a>
+<a *ngIf="isOrganization" mat-raised-button color="primary" routerLink="/event/create">Create New</a>
 <div class="divider"></div>
 <a mat-raised-button color="primary" routerLink="/event">Event List</a>
 <hr>

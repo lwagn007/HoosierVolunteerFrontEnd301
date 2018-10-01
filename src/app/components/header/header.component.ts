@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   userName: string;
-  isLoggedIn: boolean; 
+  isLoggedIn: boolean;
+  isOrganization: boolean; 
 
   constructor(public router: Router, public _authService: AuthService) { }
 
@@ -36,4 +37,5 @@ export interface UserData {
   userName:string;
   email: string;
   isLoggedIn: boolean;
+  isOrganization: boolean;
 }
