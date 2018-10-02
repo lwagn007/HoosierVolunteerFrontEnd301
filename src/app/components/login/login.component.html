@@ -5,7 +5,7 @@
       <img src="../../../assets/Home_Assets/hands.png" alt="Paris" class="center"> </div>
   <div class = box>
   <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="_loginForm">
-    <div calss="formfont">
+    <div class="formfont">
       <div>
         <mat-form-field>
           <input matInput placeholder="Email" formControlName="email" type="email" required/>
@@ -17,7 +17,7 @@
         </mat-form-field>
       </div>    
     </div>    
-    <button mat-raised-button class="nav-btn" color="primary" type="submit">Login</button>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit" [disabled]="_loginForm.invalid">Login</button>
   </form>
   <br>
   <a routerLink="/register">Register as a new user</a>
