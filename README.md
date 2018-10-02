@@ -14,6 +14,15 @@ As a business, you can create events and describe the specifics such as how many
 
 Please email comments, questions, or concerns to boillot.cody@gmail.com
 
+# Development Team
+
+Lawrence Wagner
+
+Cody Boillot
+
+Tim Deeter
+
+Danielle Reed
 
 ## Pre-generated Readme Info
 
