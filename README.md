@@ -16,13 +16,25 @@ Please email comments, questions, or concerns to boillot.cody@gmail.com
 
 # Development Team
 
-Lawrence Wagner
+Lawrence Wagner - github.com/lwag007
 
-Cody Boillot
+Cody Boillot - github.com/codipherus
 
-Tim Deeter
+Tim Deeter - github.com/timdeeter
 
-Danielle Reed
+Danielle Reed - github.com/daniellebeers
+
+## Frameworks and Libraries Used
+
+ASP.NET Web API
+
+C# 6
+
+HTML 5 & CSS 3
+
+Angular 6
+
+Angular Material
 
 ## Pre-generated Readme Info
 
