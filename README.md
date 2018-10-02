@@ -1,4 +1,21 @@
-# HoosierVolunteerFrontEnd301
+# Hoosier Volunteers App
+
+## Walkthrough of Site
+
+Once the site is loaded, please hit CTRL-SHIFT-R to load the background (this is an angular issue)
+
+The menu is located on the three-dot button on top right.
+
+If you are a business that wishes to create events, make sure to check the box during registration.
+
+As a volunteer, you can see the available events in LIST EVENTS, See the location, and get directions.
+
+As a business, you can create events and describe the specifics such as how many volunteers you need.
+
+Please email comments, questions, or concerns to boillot.cody@gmail.com
+
+
+## Pre-generated Readme Info
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
