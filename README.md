@@ -1,8 +1,8 @@
 # Hoosier Volunteers App
-
+(first sentence is an example for students for what not to do in a readme)
 ## Walkthrough of Site
 
-Once the site is loaded, please hit CTRL-SHIFT-R to load the background (this is an angular issue)
+Once the site is loaded, please hit CTRL-SHIFT-R to load the background (this is an angular issue) 
 
 The menu is located on the three-dot button on top right.
 
